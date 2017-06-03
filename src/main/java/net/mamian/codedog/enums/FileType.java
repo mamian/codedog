@@ -16,6 +16,7 @@ public enum FileType implements BaseEnum {
 
     final String msg;
 
+    @Override
     public String getMsg(){
         return this.msg;
     }
