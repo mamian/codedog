@@ -45,17 +45,27 @@ public class SimpleStrategy implements IStrategy {
 
         if(CollectionUtils.isNotEmpty(lineList)){
             StringBuilder result = new StringBuilder();
-            
-
-
             try {
                 org.apache.commons.io.FileUtils.writeStringToFile(new File(file.getAbsolutePath()+"_bak"),result.toString(),"UTF-8");
             } catch (IOException e) {
                 e.printStackTrace();
             }
+
         }
 
         return file;
+    }
+
+    /**
+     * 处理被空格分隔的词
+     *
+     * @param item 待处理的词
+     * @param importClassSet 导入的类名称
+     * @param result 存储分析结果
+     * */
+    private static void processItem(String item, Set<String> importClassSet, StringBuilder result){
+
+
     }
 
 }
