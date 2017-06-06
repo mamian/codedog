@@ -8,10 +8,10 @@ package net.mamian.codedog.encrypt;
 public interface IEncrypt {
 
     /**
-     * @param suanfa 加密算法
+     * @param method 加密算法
      * @param content 加密内容
      * @param contentType 加密内容的类型
      * */
-    public String encrypt(String suanfa, String content, String contentType);
+    public String encrypt(String method, String content, String contentType);
 
 }
