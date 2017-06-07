@@ -134,7 +134,10 @@ public class SimpleStrategy implements IStrategy {
      * @param result 存储分析结果
      * */
     private static void processItem(String item, Set<String> importClassSet, StringBuilder result){
-
+        if(StringUtils.isBlank(item)){
+            result.append(" ");
+            return;
+        }
 
     }
 
