@@ -138,6 +138,19 @@ public class SimpleStrategy implements IStrategy {
             result.append(" ");
             return;
         }
+        //全路径外部类解析-start（如org.apache.commons.io.FileUtils）------------------
+        if(item.indexOf('.')>0){
+            result.append(item).append(" ");
+            return;
+        }
+
+        //全路径外部类解析-end------------------
+
+        if(importClassSet.contains(item)){
+            result.append(item).append(" ");
+            return;
+        }
+
 
     }
 
