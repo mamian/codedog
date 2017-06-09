@@ -151,6 +151,13 @@ public class SimpleStrategy implements IStrategy {
             return;
         }
 
+        //关键字解析-start------------------
+        if(JavaWordConstant.JavaWordSet.contains(item)){
+            result.append(item).append(" ");
+            return;
+        }
+
+        //关键字解析-end------------------
 
     }
 
