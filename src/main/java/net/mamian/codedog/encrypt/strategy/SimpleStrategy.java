@@ -159,6 +159,21 @@ public class SimpleStrategy implements IStrategy {
 
         //关键字解析-end------------------
 
+
+
+
+        //语法符号解析-start------------------
+        boolean isToEncrypt = true;//是否可加密
+        for(char c : item.toCharArray()){
+            if(!isToEncrypt){//不可加密
+                break;
+            }
+            if(c>='0' && c<='9' || c>='A' && c<='z' || c=='_'){}else{
+                isToEncrypt = false;
+            }
+        }
+        
+
     }
 
 }
