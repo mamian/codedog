@@ -151,6 +151,7 @@ public class SimpleStrategy implements IStrategy {
             return;
         }
 
+
         //关键字解析-start------------------
         if(JavaWordConstant.JavaWordSet.contains(item)){
             result.append(item).append(" ");
@@ -172,7 +173,23 @@ public class SimpleStrategy implements IStrategy {
                 isToEncrypt = false;
             }
         }
-        
+        if(isToEncrypt){
+            String old = EncryptCacheMap.get(item);
+            if(null == old){
+                String ll = item+"2";
+                EncryptCacheMap.set(item,ll);
+                result.append(ll).append(" ");
+            }else{
+                result.append(old).append(" ");
+            }
+            return;
+        }else{//不可加密
+            result.append(item).append(" ");
+            return;
+        }
+
+        //语法符号解析-end------------------
+
 
     }
 
