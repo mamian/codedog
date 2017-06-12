@@ -5,6 +5,8 @@ import net.mamian.codedog.utils.EncryptCacheMap;
 import net.mamian.codedog.utils.FileUtils;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.File;
 import java.io.IOException;
@@ -19,12 +21,15 @@ import java.util.Set;
  */
 public class SimpleStrategy implements IStrategy {
 
+    private static Logger log = LogManager.getLogger(SimpleStrategy.class);
+
     /**
      * 加密后的新文件
      *
      * @param file 待加密的文件
      * */
     public static File encrypt(File file){
+        log.info("加密文件start");
         if(!file.exists() || !file.isFile()){//文件不存在或不是文件类型
             return null;
         }
